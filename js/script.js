@@ -3,19 +3,29 @@
 const botao = document.getElementById("startBtn");
 
 botao.addEventListener("click", () => {
-    // TODO: peça ao usuário seu nome usando prompt()
+    const nome = prompt("Qual é o seu nome?");
 
-    // TODO: peça o ano de nascimento e armazene em anoNascimento
+    let anoNascimento = prompt("Qual é o seu ano de nascimento?");
 
-    // Use uma variável para o ano atual
+    const anoAtual = 2025;
 
-    // TODO: converta o ano de nascimento para número (parseInt)
+    const anoNascimentoInt = parseInt(anoNascimento);
 
-    // TODO: exiba com alert() uma frase: "Olá, NOME! Você tem X anos."
+    const idade = anoAtual - anoNascimentoInt;
 
-    // TODO: use confirm() para perguntar se a idade está correta
+    alert("Olá, " + nome + " Você tem " + idade + " anos.");
 
-    // Exiba no console a escolha do usuário (console.log ou console.warn)
+    const confirmacao = confirm("Essa idade está correta?");
 
-    // Melhore o programa adicionando outros recursos
+    if (confirmacao) {
+        console.log("Usuário confirmou a idade.");
+    } else {
+        console.warn("Usuário negou a idade.");
+    }
+
+    if (confirmacao) {
+        alert("Que bom!");
+    } else {
+        alert("Ops, então revise seu ano de nascimento.");
+    }
 });
